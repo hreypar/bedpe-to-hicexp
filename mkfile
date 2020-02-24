@@ -24,5 +24,6 @@ results/%.hicexp.Rds:	data/%.stable
 # if the wildcard doesnt work the prereq will change to be only data and the directory
 data([A-z0-9_/\-]*)([A-z0-9_]+).stable:R:	data\1*.bedpe.Rds
 	bin/generate-stable.sh \
-		$prereq
+		$stem1 \
+		$target
 
