@@ -1,0 +1,14 @@
+#!/bin/bash
+#
+# USAGE:
+# bin/targets
+
+find -L data/ \
+	-type f \
+	-name "*.bedpe.Rds" \
+	-exec sh \
+		-c 'filepath=$(dirname $0); filedir=$(basename $filepath); echo $filepath/$filedir.hicexp.Rds' {} \; \
+| sed -r \
+	-e 's#^data/#results/#' \
+| sort -u
+
