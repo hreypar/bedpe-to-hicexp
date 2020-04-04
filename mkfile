@@ -19,10 +19,10 @@ results/%.hicexp.Rds:	data/%.stable
 		$prereq \
 		$target
 
-# Generate samples table
+# Generate samples table: the script that generates 
+# these targets ensures bedpe.Rds files exist
 #
-# if the wildcard doesnt work the prereq will change to be only data and the directory
-data([A-z0-9_/\-]*)([A-z0-9_]+).stable:R:	data\1*.bedpe.Rds
+'(data\/.+\/)[^/]+\.stable':R:	'\1'
 	bin/generate-stable.sh \
 		$stem1 \
 		$target
