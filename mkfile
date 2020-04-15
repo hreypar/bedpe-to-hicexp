@@ -17,7 +17,6 @@
 results/%.hicexp.Rds:	data/%.stable
 	mkdir -p `dirname $target`
 	bin/bedpe-to-hicexp.R \
-		--vanilla \
 		--stable $prereq \
 		--zeroprop $MAXIMUM_ZERO_PROPORTION \
 		--average $MINIMUM_AVERAGE \
