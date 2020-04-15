@@ -20,7 +20,6 @@ options(scipen = 10)
 option_list = list(
   make_option(opt_str = c("-s", "--stable"), 
               type = "character",
-              default = "data/breast-cancer-1mb/breast-cancer-1mb.stable", 
               help = "Input stable: plain text file where the first column specifies a .bedpe.Rds file route and the second column specifies a sample group"),
   make_option(opt_str = c("-z", "--zeroprop"), 
               type = "numeric", 
@@ -32,7 +31,6 @@ option_list = list(
               help = "Minimum average value (for a row). Default is 5"),
   make_option(opt_str = c("-o", "--output"),
               type = "character", 
-              default = "results/breast-cancer-1mb/breast-cancer-1mb.hicexp.Rds", 
               help = "Output Rds file: hicexp object with more than two Hi-C matrices")
 )
 
