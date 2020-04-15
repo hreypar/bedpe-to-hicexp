@@ -10,14 +10,18 @@
 #
 # AUTHOR: HRG
 #
+< config.mk
+#
 # Run R script to produce hicexp objects.
 #
 results/%.hicexp.Rds:	data/%.stable
 	mkdir -p `dirname $target`
-	bin/generate-hicexp.R \
+	bin/bedpe-to-hicexp.R \
 		--vanilla \
-		$prereq \
-		$target
+		--stable $prereq \
+		--zeroprop $MAXIMUM_ZERO_PROPORTION \
+		--average $MINIMUM_AVERAGE \
+		--output  $target
 
 # Generate samples table: the script that generates 
 # these targets ensures bedpe.Rds files exist
