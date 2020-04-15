@@ -34,7 +34,7 @@ option_list = list(
               type = "character", 
               default = "hg38_cyto", 
               help = "GenomicRanges object indicating specific regions to be filtered out. 
-              Default is hg38 centromeric, gvar and stalk regions. Set to NULL if you know what you're doing"),
+              Default is hg38 centromeric, gvar and stalk regions. You can only change it to hg19_cyto"),
   make_option(opt_str = c("-o", "--output"),
               type = "character", 
               default = "results/breast-cancer-1mb/breast-cancer-1mb.hicexp.Rds", 
@@ -59,7 +59,8 @@ outhicexp <- make_hicexp(data_list = hic.matrices.list,
                          zero.p = opt$zeroprop,
                          A.min = opt$average,
                          filter = TRUE,
-                         remove.regions = opt$removeregions)
+                         remove.regions = hg38_cyto)
+# maybe some day code will be added to deal with the mandatory filtering and remove regions.
 
 # save hicexp as Rds
-save(list = outhicexp, file = out_hicexp_path)
+saveRDS(outhicexp, file = opt$output)
