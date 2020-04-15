@@ -30,11 +30,6 @@ option_list = list(
               type = "numeric", 
               default = 5, # should it actually be a percentage of the total reads? 
               help = "Minimum average value (for a row). Default is 5"),
-  make_option(opt_str = c("-r", "--removeregions"), 
-              type = "character", 
-              default = "hg38_cyto", 
-              help = "GenomicRanges object indicating specific regions to be filtered out. 
-              Default is hg38 centromeric, gvar and stalk regions. You can only change it to hg19_cyto"),
   make_option(opt_str = c("-o", "--output"),
               type = "character", 
               default = "results/breast-cancer-1mb/breast-cancer-1mb.hicexp.Rds", 
