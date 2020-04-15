@@ -30,7 +30,7 @@ option_list = list(
               default = 5, # should it actually be a percentage of the total reads? 
               help = "Minimum average value (for a row). Default is 5"),
   make_option(opt_str = c("-o", "--output"),
-              type = "character", 
+              type = "character",
               help = "Output Rds file: hicexp object with more than two Hi-C matrices")
 )
 
