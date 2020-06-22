@@ -9,7 +9,7 @@
 #################### import libraries and set options ####################
 library(optparse)
 library(dplyr)
-library(multiHiCcompare)
+suppressMessages(library(multiHiCcompare))
 library(GenomicRanges)
 #library(magrittr)
 #library(purrr)
