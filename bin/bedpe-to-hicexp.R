@@ -8,11 +8,8 @@
 #
 #################### import libraries and set options ####################
 suppressMessages(library(optparse))
-suppressMessages(library(dplyr))
+#suppressMessages(library(dplyr))
 suppressMessages(library(multiHiCcompare))
-suppressMessages(library(GenomicRanges))
-#library(magrittr)
-#library(purrr)
 #
 options(scipen = 10)
 #
