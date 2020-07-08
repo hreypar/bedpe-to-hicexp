@@ -9,6 +9,7 @@
 #################### import libraries and set options ####################
 suppressMessages(library(optparse))
 suppressMessages(library(multiHiCcompare))
+message("The required libraries have been loaded.")
 #
 options(scipen = 10)
 #
