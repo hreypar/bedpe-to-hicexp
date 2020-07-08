@@ -9,7 +9,7 @@
 #################### import libraries and set options ####################
 suppressMessages(library(optparse))
 suppressMessages(library(multiHiCcompare))
-message("The required libraries have been loaded.")
+message("\nThe required libraries have been loaded.")
 #
 options(scipen = 10)
 #
@@ -39,7 +39,7 @@ if (is.null(opt$stable)){
 }
 
 input.stable <- read.csv(file = opt$stable, header = FALSE, stringsAsFactors = FALSE)
-message(paste("\nTable with input files has been read:", opt$stable))
+message(paste("Table with input files has been read:", opt$stable))
 
 hic.matrices.list <- lapply(input.stable[,1], readRDS)
 message("Hi-C matrices in bedpe format have been read.")
