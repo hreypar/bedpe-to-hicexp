@@ -7,10 +7,10 @@
 #
 #
 #################### import libraries and set options ####################
-library(optparse)
-library(dplyr)
+suppressMessages(library(optparse))
+suppressMessages(library(dplyr))
 suppressMessages(library(multiHiCcompare))
-library(GenomicRanges)
+suppressMessages(library(GenomicRanges))
 #library(magrittr)
 #library(purrr)
 #
@@ -42,9 +42,13 @@ if (is.null(opt$stable)){
 }
 
 input.stable <- read.csv(file = opt$stable, header = FALSE, stringsAsFactors = FALSE)
+message("Table with input files has been read.")
 
 hic.matrices.list <- lapply(input.stable[,1], readRDS)
+message("Hi-C matrices in bedpe format have been read.")
+
 hic.matrices.sample <- input.stable[,2]
+message("Hi-C sample names have been read.")
 #
 ######################### build hicexp object #############################
 outhicexp <- make_hicexp(data_list = hic.matrices.list,
@@ -53,7 +57,10 @@ outhicexp <- make_hicexp(data_list = hic.matrices.list,
                          A.min = opt$average,
                          filter = TRUE,
                          remove.regions = hg38_cyto)
+message("hicexp object has been created.")
 # maybe some day code will be added to deal with the mandatory filtering and remove regions.
 
 # save hicexp as Rds
 saveRDS(outhicexp, file = opt$output)
+message("hicexp object has been saved as Rds file.")
+
