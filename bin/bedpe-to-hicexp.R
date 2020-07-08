@@ -8,7 +8,6 @@
 #
 #################### import libraries and set options ####################
 suppressMessages(library(optparse))
-#suppressMessages(library(dplyr))
 suppressMessages(library(multiHiCcompare))
 #
 options(scipen = 10)
