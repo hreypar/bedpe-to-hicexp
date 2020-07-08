@@ -42,7 +42,7 @@ if (is.null(opt$stable)){
 }
 
 input.stable <- read.csv(file = opt$stable, header = FALSE, stringsAsFactors = FALSE)
-message("Table with input files has been read.")
+message(paste("\nTable with input files has been read:", opt$stable))
 
 hic.matrices.list <- lapply(input.stable[,1], readRDS)
 message("Hi-C matrices in bedpe format have been read.")
@@ -62,5 +62,5 @@ message("hicexp object has been created.")
 
 # save hicexp as Rds
 saveRDS(outhicexp, file = opt$output)
-message("hicexp object has been saved as Rds file.")
+message(paste("hicexp object has been saved as Rds file:", opt$output, "\n"))
 
