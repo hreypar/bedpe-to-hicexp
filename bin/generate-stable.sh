@@ -7,7 +7,7 @@ find -L $stable_directory \
 	-type f \
 	-name "*.bedpe.Rds" \
 	-exec sh \
-		-c 'echo -n $0,; basename $0 | sed -r "s#-rep.+##"' {} \; \
+		-c 'echo -n $0,; basename $0 | sed -r "s#-.+##"' {} \; \
 | sort \
 > $stable_full_path
 
