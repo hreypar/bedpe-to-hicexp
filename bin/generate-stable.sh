@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 stable_directory=$1
 stable_full_path=$2
